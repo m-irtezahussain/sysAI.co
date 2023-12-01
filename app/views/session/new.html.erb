@@ -1,0 +1,40 @@
+<%= render 'shared/navbar'%>
+
+<div class="h-screen w-full fixed top-3 flex justify-center items-center text-xm text-gray-600 font-semibold">
+    <div class="h-[70%] w-[50%] flex justify-center  border-2">
+        <%= form_with model: @adminUser, url: admin_create_path do |form| %>
+            <div class="flex flex-col space-y-10">
+                <div class="flex justify-center items-center h-44">
+                    <%= image_tag 'managco_main_logo', class: "w-[10%]"%>
+                </div>
+
+                <div class=" flex flex-row space-x-4 justify-center ">
+                    <label for="full_name" class="w-32">Full Name:</label>
+                    <%= form.text_field :name, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class="flex flex-row space-x-4 justify-center">
+                    <label for="Email" class="w-32">Work Email:</label>
+                    <%= form.email_field :email, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class="flex flex-row space-x-4 justify-center">
+                    <label for="Password" class="w-32">Password:</label>
+                    <%= form.password_field :password, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class=" flex flex-row space-x-4 justify-center ">
+                    <label for="Confirmation Password" class="w-32">Confirmation:</label>
+                    <%= form.password_field :password_confirmation, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class=" flex flex-row space-x-4 justify-center py-6">
+                    <%= form.submit "SignUp", disable_with: 'Submiting...' , class:"w-44 h-9 bg-blue-500 text-sm text-white font-semibold rounded-xl hover:bg-green-500" %>
+                </div>
+
+            </div>
+
+        <% end %>
+    </div>
+    
+</div>

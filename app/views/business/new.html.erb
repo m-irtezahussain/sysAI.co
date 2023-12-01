@@ -1,0 +1,39 @@
+<%= render 'shared/navbar'%>
+
+<div class="h-screen w-full fixed top-3 flex justify-center items-center">
+    <div class="h-[70%] w-[50%] flex justify-center  border-2">
+        <%= form_with model: @new_business, url: business_registration_path do |form| %>
+            <div class="flex flex-col space-y-10 pt-0.5">
+                <div class="flex justify-center items-center h-44">
+                    <%= image_tag 'managco_main_logo', class: "w-[10%]"%>
+                </div>
+
+                <div class="flex flex-row space-x-4 justify-center">
+                    <label for="name" class="w-32">Name:</label>
+                    <%= form.text_field :name, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class="flex flex-row space-x-4 justify-center">
+                    <label for="Address" class="w-32">Address:</label>
+                    <%= form.text_area :address, class:"w-80 h-14 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class="flex flex-row space-x-4 justify-center">
+                    <label for="Service" class="w-32">Service:</label>
+                    <%= form.text_field :service, class:"w-80 h-8 rounded-xl px-2 border-2 border-neutral-200" %>
+                </div>
+
+                <div class=" flex flex-row space-x-4 justify-center py-6">
+                    <%= form.submit "Register", disable_with: 'Submiting...' , class:"w-44 h-9 bg-blue-500 text-sm text-white font-semibold rounded-xl hover:bg-green-500" %>
+                </div>
+
+            </div>
+
+        <% end %>
+
+            
+
+        </form>
+    </div>
+    
+</div>
