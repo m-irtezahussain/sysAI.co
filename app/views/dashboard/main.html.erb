@@ -1,0 +1,19 @@
+<%= render 'shared/navbar'%>
+<%= render 'shared/sidebar_admin'%>
+
+<div class="fixed top-32 left-96 bg-white w-[75%] h-[80%]">
+    <% if !@user_entity.present? %>
+
+    <div class="flex justify-end items-center w-[95%] h-32">
+        <a href="<%= business_registration_path %>"><button class="h-16 w-64 bg-blue-500 rounded-3xl font-semibold text-white hover:bg-blue-800">Register Your Business Now!</button></a>
+    </div>
+
+    <% else %>
+
+    <div class="flex justify-center h-full items-center items-center w-[95%]">
+        <a href=""><button class="bg-blue-300 rounded-3xl text-4xl w-96 h-24 font-semibold text-white hover:bg-blue-800"><%= @user_entity.name%></button></a>
+    </div>
+
+    <% end %>
+
+</div>
